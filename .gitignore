@@ -1,0 +1,23 @@
+# Raw and derived data are not committed by default
+/data/raw/*
+!/data/raw/.gitkeep
+/data/derived/*
+!/data/derived/.gitkeep
+
+# Generated analysis outputs
+/results/generated/*
+!/results/generated/.gitkeep
+
+# R / RStudio state
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+renv/library/
+renv/staging/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp

@@ -1,0 +1,9 @@
+Survey_Round,Treatment_Group,N,Business_Ownership_Rate,Baseline_Business_Rate
+Midline,Control,1152,0.441,0.364
+Midline,Capital,1131,0.628,0.372
+Midline,Psychosocial,1056,0.625,0.360
+Midline,Full,1137,0.667,0.372
+Endline,Control,1080,0.508,0.372
+Endline,Capital,1082,0.647,0.379
+Endline,Psychosocial,1022,0.631,0.371
+Endline,Full,1068,0.676,0.374

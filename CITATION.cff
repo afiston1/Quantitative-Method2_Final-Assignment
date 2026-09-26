@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this replication code, please cite the repository, the World Bank ASPIE dataset, and the related Bossuroy et al. (2022) paper."
+title: "Replication package: The Effect of Productive Inclusion Interventions on Women's Business Ownership in Niger"
+type: software
+version: 1.0.0
+date-released: 2026-09-26
+preferred-citation:
+  type: article
+  title: "The Effect of Productive Inclusion Interventions on Women's Business Ownership in Niger: Evidence From the World Bank-Funded Adaptive Safety Nets Programme"
+  authors:
+    - family-names: "[AUTHOR SURNAME]"
+      given-names: "[AUTHOR GIVEN NAME]"
+  year: 2026
+references:
+  - type: dataset
+    title: "Adaptive Safety Nets Program 2017-2020, Baseline, Midline and Endline Impact Evaluation Surveys (ASPIE)"
+    year: 2022
+    doi: "10.48529/0h1e-xt51"
+  - type: article
+    title: "Tackling psychosocial and capital constraints to alleviate poverty"
+    year: 2022
+    doi: "10.1038/s41586-022-04647-8"

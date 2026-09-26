@@ -1,0 +1,322 @@
+FINAL PROJECT RAW OUTPUT
+Productive Inclusion and Women's Entrepreneurship in Niger
+Quantitative technique: Binary Logistic Regression
+
+R version:
+[1] "R version 4.6.0 (2026-04-24)"
+
+Session information:
+R version 4.6.0 (2026-04-24)
+Platform: aarch64-apple-darwin23
+Running under: macOS Tahoe 26.5
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Africa/Bamako
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] modelsummary_2.6.0 margins_0.3.28     lmtest_0.9-40      zoo_1.9-0         
+[5] sandwich_3.1-3     dplyr_1.2.1        readr_2.2.0       
+
+loaded via a namespace (and not attached):
+ [1] vctrs_0.7.3         knitr_1.52          cli_3.6.6           xfun_0.61          
+ [5] rlang_1.2.0         otel_0.2.0          generics_0.1.4      prediction_0.3.18  
+ [9] data.table_1.18.6.1 glue_1.8.1          htmltools_0.5.9     hms_1.1.4          
+[13] grid_4.6.0          evaluate_1.0.5      tibble_3.3.1        fastmap_1.2.0      
+[17] MASS_7.3-65         tzdb_0.5.0          lifecycle_1.0.5     compiler_4.6.0     
+[21] pkgconfig_2.0.3     rstudioapi_0.19.0   digest_0.6.39       lattice_0.22-9     
+[25] R6_2.6.1            tidyselect_1.2.1    pillar_1.11.1       magrittr_2.0.5     
+[29] tools_4.6.0         tables_0.9.35      
+
+indexed 0B in  0s, 0B/s
+indexed 1.00TB in  0s, 20.69TB/s
+                                                                                      
+-----------------------------
+DATA AUDIT
+-----------------------------
+Rows in allrounds_NER_hh: 8779 
+Columns in allrounds_NER_hh: 401 
+Unique villages/clusters: 322 
+Unique randomization strata: 56 
+
+
+wrote 4.10kB in  0s, 1.43GB/s
+wrote 1.00TB in  0s, 133.16TB/s
+                                                                                      
+-----------------------------
+DESCRIPTIVE STATISTICS
+-----------------------------
+
+Treatment counts - all follow-up observations:
+
+     Control      Capital Psychosocial         Full 
+        2232         2213         2078         2205 
+
+Outcome distribution - all follow-up observations:
+
+   0    1 
+3476 5252 
+
+        0         1 
+0.3982585 0.6017415 
+
+Business ownership rates by treatment and phase:
+# A tibble: 8 × 5
+  phase_f treatment        N Business_Ownership_Rate Baseline_Business_Rate
+  <fct>   <fct>        <int>                   <dbl>                  <dbl>
+1 Midline Control       1152                   0.441                  0.364
+2 Midline Capital       1131                   0.628                  0.372
+3 Midline Psychosocial  1056                   0.625                  0.360
+4 Midline Full          1137                   0.667                  0.372
+5 Endline Control       1080                   0.508                  0.372
+6 Endline Capital       1082                   0.647                  0.379
+7 Endline Psychosocial  1022                   0.631                  0.371
+8 Endline Full          1068                   0.676                  0.374
+
+wrote 1.00TB in  0s, 466.03PB/s
+                                                                                      
+Midline N: 4476 
+Endline N: 4252 
+Endline villages/clusters: 320 
+
+-----------------------------
+PRIMARY ENDLINE LOGIT MODEL
+Cluster-robust SE at village level
+-----------------------------
+
+z test of coefficients:
+
+                        Estimate Std. Error z value  Pr(>|z|)    
+(Intercept)           -0.5635201  0.6667620 -0.8452   0.39802    
+treatmentCapital       0.6571633  0.1144460  5.7421 9.350e-09 ***
+treatmentPsychosocial  0.5517490  0.1150664  4.7950 1.626e-06 ***
+treatmentFull          0.7862258  0.1118886  7.0269 2.112e-12 ***
+bus2_ben_dum_bl        1.0564882  0.0808183 13.0724 < 2.2e-16 ***
+bus2_ben_dum_bl_bd    -0.0101216  0.2469492 -0.0410   0.96731    
+strata_f2              0.0346699  0.6996970  0.0495   0.96048    
+strata_f3              0.5560398  0.7622782  0.7294   0.46573    
+strata_f4              0.0911587  0.7906198  0.1153   0.90821    
+strata_f5             -0.6096799  0.8058172 -0.7566   0.44929    
+strata_f6             -0.1375072  0.7027161 -0.1957   0.84486    
+strata_f7             -0.3527533  0.7828409 -0.4506   0.65227    
+strata_f8              0.3743418  0.6870640  0.5448   0.58586    
+strata_f9              0.7257091  0.7155965  1.0141   0.31052    
+strata_f10             0.4040941  0.6820184  0.5925   0.55352    
+strata_f11             0.3926655  0.7511047  0.5228   0.60112    
+strata_f12             0.8921358  0.8826273  1.0108   0.31213    
+strata_f13             0.8885393  0.7997252  1.1111   0.26654    
+strata_f14             1.0363952  0.7167205  1.4460   0.14817    
+strata_f15            -0.1349117  0.7168655 -0.1882   0.85072    
+strata_f16             0.2202656  0.7239323  0.3043   0.76093    
+strata_f17             0.0020047  0.6884211  0.0029   0.99768    
+strata_f18             0.8211966  0.6680367  1.2293   0.21897    
+strata_f19             0.1719888  0.6667159  0.2580   0.79643    
+strata_f20            -0.1918384  0.7174027 -0.2674   0.78916    
+strata_f21             0.0952271  0.7250529  0.1313   0.89551    
+strata_f22            -0.1751749  0.7003002 -0.2501   0.80248    
+strata_f23            -0.0403363  0.7008050 -0.0576   0.95410    
+strata_f24            -0.2908885  0.6826286 -0.4261   0.67001    
+strata_f25             0.0921734  0.7360427  0.1252   0.90034    
+strata_f26             0.9978437  0.7669886  1.3010   0.19326    
+strata_f27             0.8577133  0.7190221  1.1929   0.23291    
+strata_f28             0.6088987  0.6980634  0.8723   0.38306    
+strata_f29             0.8549362  0.6858543  1.2465   0.21257    
+strata_f30             1.4704370  0.7139274  2.0596   0.03943 *  
+strata_f31             0.8004004  0.6684972  1.1973   0.23118    
+strata_f32            -0.9378255  0.6802848 -1.3786   0.16802    
+strata_f33             0.4645305  0.7155317  0.6492   0.51620    
+strata_f34            -0.1551302  0.7111528 -0.2181   0.82732    
+strata_f35             0.0681586  0.7198111  0.0947   0.92456    
+strata_f36             0.0117711  0.6680503  0.0176   0.98594    
+strata_f37             1.1189983  0.7393420  1.5135   0.13015    
+strata_f38            -0.1498790  0.6934265 -0.2161   0.82888    
+strata_f39             0.1033320  0.7581296  0.1363   0.89159    
+strata_f40            -0.0404193  0.7713524 -0.0524   0.95821    
+strata_f41             0.2933935  0.7026089  0.4176   0.67626    
+strata_f42             1.0632985  0.7632226  1.3932   0.16357    
+strata_f43             0.2044036  0.7893150  0.2590   0.79566    
+strata_f44            -0.4112608  0.6776136 -0.6069   0.54390    
+strata_f45             0.0725125  0.6890153  0.1052   0.91618    
+strata_f46            -0.0528486  0.6630240 -0.0797   0.93647    
+strata_f47            -0.1717105  0.6863026 -0.2502   0.80244    
+strata_f48             0.9911600  1.0169062  0.9747   0.32972    
+strata_f49             0.5890227  0.6853824  0.8594   0.39012    
+strata_f50             0.7158811  0.7209857  0.9929   0.32075    
+strata_f51             0.0373513  0.8301988  0.0450   0.96411    
+strata_f52             1.3347444  0.7286157  1.8319   0.06697 .  
+strata_f53             1.5112506  0.6684636  2.2608   0.02377 *  
+strata_f54            -0.1159116  0.6894442 -0.1681   0.86649    
+strata_f55             0.5515025  0.7900566  0.6981   0.48514    
+strata_f56            -0.1228594  0.6981740 -0.1760   0.86032    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+-----------------------------
+MIDLINE ROBUSTNESS LOGIT MODEL
+Cluster-robust SE at village level
+-----------------------------
+
+z test of coefficients:
+
+                        Estimate Std. Error z value  Pr(>|z|)    
+(Intercept)           -0.1358970  0.8100250 -0.1678   0.86677    
+treatmentCapital       0.8512266  0.1044270  8.1514 3.597e-16 ***
+treatmentPsychosocial  0.8442419  0.1082491  7.7991 6.237e-15 ***
+treatmentFull          1.0089538  0.1051025  9.5997 < 2.2e-16 ***
+bus2_ben_dum_bl        0.9957122  0.0760106 13.0996 < 2.2e-16 ***
+bus2_ben_dum_bl_bd    -0.2733107  0.2279277 -1.1991   0.23048    
+strata_f2              0.8606981  1.2829076  0.6709   0.50229    
+strata_f3             -0.2064465  0.9683262 -0.2132   0.83117    
+strata_f4             -0.4799733  0.8437745 -0.5688   0.56946    
+strata_f5             -1.6053838  0.8681659 -1.8492   0.06443 .  
+strata_f6             -0.8240487  0.8302869 -0.9925   0.32096    
+strata_f7             -0.7691522  0.8102424 -0.9493   0.34247    
+strata_f8             -0.1859707  0.8348425 -0.2228   0.82372    
+strata_f9             -0.2834958  0.8334456 -0.3401   0.73374    
+strata_f10            -0.3518393  0.8267921 -0.4255   0.67044    
+strata_f11            -0.0067865  0.8326303 -0.0082   0.99350    
+strata_f12            -0.4661986  0.8743220 -0.5332   0.59389    
+strata_f13             0.2570859  0.8985212  0.2861   0.77479    
+strata_f14            -0.3870983  0.8817751 -0.4390   0.66066    
+strata_f15            -0.6803395  0.8621665 -0.7891   0.43005    
+strata_f16            -0.5951333  0.8246479 -0.7217   0.47049    
+strata_f17            -0.9722980  0.8407228 -1.1565   0.24748    
+strata_f18             0.3487040  0.8239306  0.4232   0.67213    
+strata_f19            -0.4401158  0.9488002 -0.4639   0.64274    
+strata_f20            -0.1855496  0.8492875 -0.2185   0.82706    
+strata_f21            -0.1039150  0.8461557 -0.1228   0.90226    
+strata_f22            -1.0427876  0.8288373 -1.2581   0.20834    
+strata_f23            -0.5686182  0.8284009 -0.6864   0.49246    
+strata_f24            -1.1233155  0.8767323 -1.2813   0.20010    
+strata_f25            -0.6283814  0.8793375 -0.7146   0.47485    
+strata_f26            -0.5172549  0.9155087 -0.5650   0.57208    
+strata_f27            -0.0568780  0.8268648 -0.0688   0.94516    
+strata_f28             0.1264610  0.8821645  0.1434   0.88601    
+strata_f29             0.3301366  0.8242868  0.4005   0.68878    
+strata_f30             1.4440113  0.8657008  1.6680   0.09531 .  
+strata_f31             0.4484440  0.8906680  0.5035   0.61462    
+strata_f32            -1.5184521  0.8239952 -1.8428   0.06536 .  
+strata_f33             0.0954801  0.8875518  0.1076   0.91433    
+strata_f34            -0.9087686  0.8356371 -1.0875   0.27681    
+strata_f35            -0.5191015  0.8497837 -0.6109   0.54129    
+strata_f36            -0.3028798  0.8114983 -0.3732   0.70897    
+strata_f37            -0.0153215  0.8495032 -0.0180   0.98561    
+strata_f38            -0.7446648  0.8417981 -0.8846   0.37637    
+strata_f39            -0.4268867  0.8799309 -0.4851   0.62758    
+strata_f40             0.9013925  1.0026578  0.8990   0.36865    
+strata_f41             0.2539310  0.8159375  0.3112   0.75564    
+strata_f42             0.0974716  0.8168653  0.1193   0.90502    
+strata_f43            -0.1492391  0.8411312 -0.1774   0.85917    
+strata_f44            -1.2180150  0.8618901 -1.4132   0.15760    
+strata_f45            -0.4375603  0.8260508 -0.5297   0.59632    
+strata_f46            -0.6315454  0.8382183 -0.7534   0.45119    
+strata_f47            -0.5821105  0.8423668 -0.6910   0.48954    
+strata_f48            -0.3963300  0.8532615 -0.4645   0.64230    
+strata_f49            -0.2769085  0.8274977 -0.3346   0.73790    
+strata_f50             0.1561456  0.8236673  0.1896   0.84964    
+strata_f51            -0.8860561  0.9436828 -0.9389   0.34776    
+strata_f52             1.2232988  0.9471228  1.2916   0.19650    
+strata_f53            -0.2325916  0.9435806 -0.2465   0.80530    
+strata_f54            -0.4725495  0.8276902 -0.5709   0.56805    
+strata_f55             0.1864582  0.8596866  0.2169   0.82829    
+strata_f56            -1.6941104  0.8403849 -2.0159   0.04381 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+-----------------------------
+PRIMARY MODEL ODDS RATIOS
+-----------------------------
+                   Term Coefficient Cluster_Robust_SE Odds_Ratio OR_CI_Lower_95
+1      treatmentCapital  0.65716331        0.11444599  1.9293117      1.5416437
+2 treatmentPsychosocial  0.55174896        0.11506640  1.7362871      1.3857186
+3         treatmentFull  0.78622575        0.11188864  2.1950959      1.7628363
+4       bus2_ben_dum_bl  1.05648821        0.08081833  2.8762524      2.4548957
+5    bus2_ben_dum_bl_bd -0.01012164        0.24694924  0.9899294      0.6100941
+  OR_CI_Upper_95
+1       2.414464
+2       2.175545
+3       2.733349
+4       3.369931
+5       1.606245
+
+wrote 1.00TB in  0s, 349.53PB/s
+                                                                                      
+-----------------------------
+AVERAGE MARGINAL EFFECTS - ENDLINE
+-----------------------------
+                factor    AME     SE      z      p  lower  upper
+      treatmentCapital 0.1414 0.0243 5.8211 0.0000 0.0938 0.1891
+         treatmentFull 0.1674 0.0234 7.1529 0.0000 0.1215 0.2133
+ treatmentPsychosocial 0.1196 0.0246 4.8595 0.0000 0.0714 0.1679
+
+wrote 1.00TB in  0s, 322.64PB/s
+                                                                                      
+-----------------------------
+AVERAGE MARGINAL EFFECTS - MIDLINE
+-----------------------------
+                factor    AME     SE       z      p  lower  upper
+      treatmentCapital 0.1840 0.0218  8.4289 0.0000 0.1412 0.2268
+         treatmentFull 0.2161 0.0216 10.0228 0.0000 0.1739 0.2584
+ treatmentPsychosocial 0.1826 0.0227  8.0560 0.0000 0.1382 0.2270
+
+-----------------------------
+REGRESSION TABLE
+-----------------------------
+        part                  term statistic Endline: Unadjusted Endline: Adjusted
+1  estimates           (Intercept)  estimate               0.033            -0.564
+2  estimates           (Intercept) std.error             (0.086)           (0.667)
+3  estimates      treatmentCapital  estimate            0.572***          0.657***
+4  estimates      treatmentCapital std.error             (0.133)           (0.114)
+5  estimates treatmentPsychosocial  estimate            0.504***          0.552***
+6  estimates treatmentPsychosocial std.error             (0.125)           (0.115)
+7  estimates         treatmentFull  estimate            0.702***          0.786***
+8  estimates         treatmentFull std.error             (0.131)           (0.112)
+9  estimates       bus2_ben_dum_bl  estimate                              1.056***
+10 estimates       bus2_ben_dum_bl std.error                               (0.081)
+11 estimates    bus2_ben_dum_bl_bd  estimate                                -0.010
+12 estimates    bus2_ben_dum_bl_bd std.error                               (0.247)
+13       gof              Num.Obs.                          4252              4252
+14       gof            Std.Errors                        Custom            Custom
+   Midline: Adjusted
+1             -0.136
+2            (0.810)
+3           0.851***
+4            (0.104)
+5           0.844***
+6            (0.108)
+7           1.009***
+8            (0.105)
+9           0.996***
+10           (0.076)
+11            -0.273
+12           (0.228)
+13              4476
+14            Custom
+
+-----------------------------
+MODEL FIT INFORMATION
+-----------------------------
+Primary endline model AIC: 5248.232 
+Primary endline model residual deviance: 5126.232 
+Primary endline model null deviance: 5666.61 
+Primary endline model observations: 4252 
+
+Analysis completed successfully.
+Files created:
+- Final_Project_Raw_Output.txt
+- Final_Project_Analysis_Data.csv
+- Descriptive_Statistics_By_Treatment.csv
+- Primary_Model_Odds_Ratios.csv
+- Primary_Model_Average_Marginal_Effects.csv
+- Regression_Table.html

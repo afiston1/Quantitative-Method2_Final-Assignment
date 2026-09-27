@@ -20,14 +20,14 @@ a2 <- a %>%
     Survey_Round = as.character(phase_f),
     Treatment_Group = as.character(treatment),
     N,
-    Business_Ownership_Rate,
+    Business_Participation_Rate,
     Baseline_Business_Rate
   )
 
 merged_desc <- inner_join(e, a2, by = c("Survey_Round", "Treatment_Group"), suffix = c("_expected", "_actual"))
 stopifnot(nrow(merged_desc) == 8)
 stopifnot(all(merged_desc$N_expected == merged_desc$N_actual))
-stopifnot(max(abs(merged_desc$Business_Ownership_Rate_expected - merged_desc$Business_Ownership_Rate_actual)) < tol_desc)
+stopifnot(max(abs(merged_desc$Business_Participation_Rate_expected - merged_desc$Business_Participation_Rate_actual)) < tol_desc)
 stopifnot(max(abs(merged_desc$Baseline_Business_Rate_expected - merged_desc$Baseline_Business_Rate_actual)) < tol_desc)
 
 # Primary model coefficients / odds ratios

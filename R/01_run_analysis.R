@@ -1,7 +1,7 @@
 # ============================================================
 # REPLICATION ANALYSIS
 # The Effect of Productive Inclusion Interventions on Women's
-# Business Ownership in Niger
+# Business Participation in Niger
 # ============================================================
 
 suppressPackageStartupMessages({
@@ -40,7 +40,7 @@ on.exit({
 }, add = TRUE)
 
 cat("FINAL PROJECT RAW OUTPUT\n")
-cat("The Effect of Productive Inclusion Interventions on Women's Business Ownership in Niger\n")
+cat("The Effect of Productive Inclusion Interventions on Women's Business Participation in Niger\n")
 cat("Quantitative technique: Binary Logistic Regression\n\n")
 cat("R version:\n")
 print(R.version.string)
@@ -105,26 +105,26 @@ business_desc <- analysis %>%
   group_by(phase_f, treatment) %>%
   summarise(
     N = n(),
-    Business_Ownership_Rate = mean(bus2_ben_dum, na.rm = TRUE),
+    Business_Participation_Rate = mean(bus2_ben_dum, na.rm = TRUE),
     Baseline_Business_Rate = mean(bus2_ben_dum_bl, na.rm = TRUE),
     .groups = "drop"
   )
 
-cat("\nBusiness ownership rates by treatment and phase:\n")
+cat("\nBusiness participation rates by treatment and phase:\n")
 print(business_desc)
 write_csv(business_desc, file.path(out_dir, "Descriptive_Statistics_By_Treatment.csv"))
 
 # Paper Table 1, percentages rather than proportions
 paper_table1 <- business_desc %>%
   mutate(
-    Business_Ownership_Percent = 100 * Business_Ownership_Rate,
+    Business_Participation_Percent = 100 * Business_Participation_Rate,
     Baseline_Business_Percent = 100 * Baseline_Business_Rate
   ) %>%
   select(
     Survey_Round = phase_f,
     Treatment_Group = treatment,
     N,
-    Business_Ownership_Percent,
+    Business_Participation_Percent,
     Baseline_Business_Percent
   )
 write_csv(paper_table1, file.path(out_dir, "Table1_Descriptive_Statistics.csv"))
@@ -256,7 +256,7 @@ term_labels <- c(
   treatmentCapital = "Capital",
   treatmentPsychosocial = "Psychosocial",
   treatmentFull = "Full",
-  bus2_ben_dum_bl = "Baseline business ownership",
+  bus2_ben_dum_bl = "Baseline business participation",
   bus2_ben_dum_bl_bd = "Missing baseline indicator"
 )
 
@@ -303,7 +303,7 @@ modelsummary(
   stars = c("*" = .05, "**" = .01, "***" = .001),
   gof_omit = "IC|Log.Lik.|RMSE",
   output = file.path(out_dir, "Regression_Table.html"),
-  title = "Logistic Regression Predicting Beneficiary Business Ownership"
+  title = "Logistic Regression Predicting Beneficiary Business Participation"
 )
 
 cat("\n-----------------------------\n")

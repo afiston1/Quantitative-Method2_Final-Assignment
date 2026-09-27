@@ -1,8 +1,8 @@
-# Productive Inclusion and Women's Business Ownership in Niger — Replication Package
+# Productive Inclusion and Women's Business Participation in Niger — Replication Package
 
 This repository reproduces the calculations for the study:
 
-> **The Effect of Productive Inclusion Interventions on Women's Business Ownership in Niger: Evidence From the World Bank-Funded Adaptive Safety Nets Programme**
+> **The Effect of Productive Inclusion Interventions on Women's Business Participation in Niger: Evidence From the World Bank-Funded Adaptive Safety Nets Programme**
 
 The empirical analysis uses the World Bank/DIME Niger Adaptive Safety Nets Program impact-evaluation data and estimates binary logistic regression models with village-clustered robust standard errors.
 
@@ -12,7 +12,7 @@ The code reproduces:
 
 - the data audit (rows, variables, clusters, and randomization strata);
 - treatment-group and outcome counts;
-- business-ownership rates by treatment arm at midline and endline;
+- business-participation rates by treatment arm at midline and endline;
 - the primary adjusted endline Logit model;
 - the unadjusted endline Logit model;
 - the adjusted midline robustness model;
@@ -31,7 +31,7 @@ The code reproduces:
 ├── README.md
 ├── CITATION.cff
 ├── run_all.R
-├── niger-business-ownership-replication.Rproj
+├── niger-business-participation-replication.Rproj
 ├── R/
 │   ├── 01_run_analysis.R
 │   └── 02_validate_results.R
@@ -107,7 +107,7 @@ Validation passed: generated results match the archived reference results within
 
 The primary endline analytical sample contains **4,252 observations from 320 villages**.
 
-Endline business-ownership rates:
+Endline business-participation rates:
 
 | Group | N | Business ownership |
 |---|---:|---:|
@@ -155,7 +155,7 @@ Raw and derived survey data are excluded from Git by default.
 
 `R/02_validate_results.R` compares the newly generated outputs with archived expected values. It checks, among other quantities:
 
-- treatment-group sample sizes and business-ownership rates;
+- treatment-group sample sizes and business-participation rates;
 - primary Logit coefficients and clustered standard errors;
 - odds ratios;
 - average marginal effects;
@@ -177,7 +177,7 @@ Please consult the World Bank catalog for the current full dataset citation and 
 ## Notes for GitHub publication
 
 1. **Do not commit the raw ZIP unless you have independently confirmed that redistribution is permitted under the current World Bank terms.** The repository is designed to work without committing the raw data.
-2. Replace the author placeholders in `CITATION.cff` before publishing.
+2. The author information in `CITATION.cff` is set to Fiston Aruna.
 3. Consider adding a code license (for example MIT) before making the repository public.
 4. Keep `results/reference/Final_Project_Raw_Output.txt` as the audit trail from the original successful run.
 

@@ -10,8 +10,8 @@ The analysis uses the World Bank/DIME `allrounds_NER_hh.csv` file.
 | `cluster` | Clustering variable | Village; the unit of randomization |
 | `strata` | Design control | Randomization stratum |
 | `bus2_ben_dum` | Dependent variable | 1 if the female beneficiary operated a business; 0 otherwise |
-| `bus2_ben_dum_bl` | Baseline control | Baseline business-ownership outcome |
-| `bus2_ben_dum_bl_bd` | Missing-baseline indicator | Indicator for missing baseline business-ownership information |
+| `bus2_ben_dum_bl` | Baseline control | Baseline business-participation outcome |
+| `bus2_ben_dum_bl_bd` | Missing-baseline indicator | Indicator for missing baseline business-participation information |
 | `equiv_n` | Retained auxiliary variable | Household adult-equivalent size; exported for convenience but not used in the primary model |
 
 ## Primary specification

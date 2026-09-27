@@ -4,7 +4,7 @@
 
 1. Read the World Bank public-use household follow-up file directly from the downloaded ZIP archive.
 2. Recode treatment and survey-round indicators as factors.
-3. Retain observations with non-missing business ownership, treatment, village cluster, randomization stratum, baseline business ownership, and baseline-missing indicator.
+3. Retain observations with non-missing business participation, treatment, village cluster, randomization stratum, baseline business participation, and baseline-missing indicator.
 4. Produce treatment-by-round descriptive statistics.
 5. Estimate three binary Logit models:
    - Endline, unadjusted: treatment indicators only.
@@ -19,7 +19,7 @@
 ## Interpretation
 
 - Logit coefficients are changes in log-odds relative to the Control arm.
-- Odds ratios above 1 indicate higher odds of business ownership relative to Control.
+- Odds ratios above 1 indicate higher odds of business participation relative to Control.
 - Average marginal effects are changes in predicted probability and are most easily communicated as percentage points.
 - The primary model tests each treatment arm against Control; it does not by itself test pairwise differences among Capital, Psychosocial, and Full.
 

@@ -1,12 +1,12 @@
 cff-version: 1.2.0
 message: "If you use this replication code, please cite the repository, the World Bank ASPIE dataset, and the related Bossuroy et al. (2022) paper."
-title: "Replication package: The Effect of Productive Inclusion Interventions on Women's Business Ownership in Niger"
+title: "Replication package: The Effect of Productive Inclusion Interventions on Women's Business Participation in Niger"
 type: software
 version: 1.0.0
 date-released: 2026-09-26
 preferred-citation:
   type: article
-  title: "The Effect of Productive Inclusion Interventions on Women's Business Ownership in Niger: Evidence From the World Bank-Funded Adaptive Safety Nets Programme"
+  title: "The Effect of Productive Inclusion Interventions on Women's Business Participation in Niger: Evidence From the World Bank-Funded Adaptive Safety Nets Programme"
   authors:
     - family-names: "Fiston"
       given-names: "Aruna"
